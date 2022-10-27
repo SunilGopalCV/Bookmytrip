@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmytrip</title>
+    <!-- <link rel="stylesheet" href="CSS/train.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Lato:wght@300&family=Montserrat&family=Roboto+Flex:opsz@8..144&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+    }
+
+    title {
+        display: block;
+        font-size: 200%;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    header {
+        background-color: aliceblue;
+    }
+
+    body {
+        background-color: rgb(239, 238, 238);
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        background-color: aliceblue;
+        z-index: 1;
+    }
+
+    .logo {
+        margin-left: 5px;
+        margin-right: 400px;
+        font-family: 'lobster', cursive;
+        font-size: 40px;
+        color: rgb(238, 74, 14);
+    }
+
+    nav ul {
+        height: 58px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    nav ul li {
+        list-style: none;
+        padding: 0 23px;
+    }
+
+    nav ul li a {
+        color: silver;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .home a {
+        text-decoration: underline;
+        font-weight: bolder;
+        color: rgb(238, 74, 14);
+        font-size: 20px;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+        font-weight: bolder;
+        color: rgb(238, 74, 14);
+        font-size: 20px;
+    }
+
+    .but {
+        background-color: rgb(255, 116, 66);
+        border-radius: 50px;
+        padding: 5px 10px;
+        color: white;
+        border-style: none;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    nav ul button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    nav ul button:hover {
+        font-size: 17px;
+        text-decoration: none;
+    }
+
+    .search {
+        height: 66vh;
+        background-image: url("images/golden-chariot.png");
+        background-size: 100% 70vh;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .box {
+        background-color: #132968;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 22%;
+        height: 200px;
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        row-gap: 10px;
+        border-radius: 10px;
+    }
+
+    .row1 input {
+        padding: 6px 70px 6px 6px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .row2 input {
+        padding: 6px 60px 6px 6px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Kanit', sans-serif;
+        margin-right: 20px;
+        margin-left: 10px;
+
+    }
+
+    .row4 label {
+        font-size: 18px;
+        color: white;
+        font-family: 'Kanit', sans-serif;
+        margin-right: 235px;
+    }
+
+    ::placeholder {
+        color: black;
+    }
+
+    .row3 select {
+        padding: 6px 5px 6px 6px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Kanit', sans-serif;
+
+    }
+
+    .row3 button {
+        padding: 6px 5px 6px 6px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Kanit', sans-serif;
+        color: white;
+        background-color: #5fbc63;
+        cursor: pointer;
+        margin-right: 201px;
+        margin-left: 37px;
+    }
+
+    main {
+        margin-top: 140px;
+    }
+
+    .irctc {
+        margin: 20px 0px 20px 0px;
+        background-color: white;
+    }
+
+    .irctc h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+        color: rgb(61, 60, 60);
+        margin: 20px 0px 0px 15px;
+    }
+
+    .container {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: flex;
+        justify-content: center;
+        margin: 30px 60px 30px 60px;
+        border: 2px solid rgb(182, 182, 182);
+    }
+
+    .info {
+        padding: 30px 0px 0px 30px;
+    }
+
+    .info h3 {
+        margin-bottom: 30px;
+    }
+
+    .info p {
+        font-family: 'Kanit', sans-serif;
+        padding-bottom: 10px;
+    }
+
+    .container2 {
+        display: inline-block;
+        margin: 40px 0px 40px 120px;
+        width: 80%;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
+        padding: 20px 40px;
+    }
+    .container2 h3{
+        font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    margin: 40px 0 10px 0;
+    color: #242F9B;
+    font-size: 25px;
+    }
+    .container2 p{
+        text-align: left;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    color: #3e3f3f;
+    }
+    .container2 img{
+        float: left;
+    margin-right: 30px;
+    border-radius: 10px;
+    }
+    .container3 {
+        display: inline-block;
+        margin: 40px 0px 40px 120px;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
+        padding: 20px 40px;
+        text-align: center;
+    }
+    .container3 h3{
+        font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    margin: 40px 0 10px 0;
+    color: #242F9B;
+    font-size: 25px;
+    }
+    .container3 p{
+        text-align: left;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    color: #3e3f3f;
+    }
+    .container3 img{
+        float: right;
+    margin-right: 30px;
+    border-radius: 10px;
+    }
+    hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-color: grey;
+    border-width: 5px;
+    width: 10%;
+    margin: 30px auto;
+
+}
+.container2 button{
+    margin: 10px 10px 10px 50px ;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 20px;
+    color: orange;
+    font-family: 'Roboto Flex', sans-serif;
+}  
+.container3 button{
+    margin: 10px 10px 10px 50px ;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 20px;
+    color: orange;
+    font-family: 'Roboto Flex', sans-serif;
+    text-align: center;
+}  
+.container2 button:hover{
+    background-color: firebrick;
+    cursor: pointer;
+}
+.container3 button:hover{
+    background-color: firebrick;
+    cursor: pointer;
+}
+footer{
+    text-align: center;
+    background-color: rgb(54, 5, 100);
+    color: white;
+    height:10vh;
+}
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                BookMyTrip
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="flights.html">Flights</a></li>
+                <li><a href="bus.html">Buses</a></li>
+                <li class="home"><a href="#">Trains</a></li>
+                <li><a href="hotel.html">Hotels</a></li>
+
+                <button class="but"><a href="./signin.html">Sign in</a></button>
+            </ul>
+        </nav>
+        <div class="search">
+            <div class="box">
+                <div class="row1">
+                    <input type="text" name="depart" id="depart" placeholder="Departing from">
+                    <a href="#"><img
+                            src="https://www.raileasy.co.uk/sites/default/includes/themes/raileasy/svg/swap.svg"
+                            alt=""></a>
+                    <input type="text" name="arive" id="arive" placeholder="Travelling to">
+                </div>
+                <div class="row4">
+                    <label for="date1">Departure:</label>
+                    <label for="date2">Return:</label>
+                </div>
+                <div class="row2">
+
+                    <input type="datetime-local" name="date1" id="date1">
+                    <input type="datetime-local" name="date2" id="date2">
+                </div>
+                <div class="row3">
+                    <select name="adult" id="adult">
+                        <option value="">0 Adult (16+)</option>
+                        <option value="">1 Adult (16+)</option>
+                        <option value="">2 Adult (16+)</option>
+                        <option value="">3 Adult (16+)</option>
+                        <option value="">4 Adult (16+)</option>
+                        <option value="">5 Adult (16+)</option>
+                        <option value="">6 Adult (16+)</option>
+                        <option value="">7 Adult (16+)</option>
+                        <option value="">8 Adult (16+)</option>
+                        <option value="">9 Adult (16+)</option>
+                    </select>
+                    <select name="children" id="children">
+                        <option value="">0 children</option>
+                        <option value="">1 child(5-15)</option>
+                        <option value="">2 children(5-15)</option>
+                        <option value="">3 children(5-15)</option>
+                        <option value="">4 children(5-15)</option>
+                        <option value="">5 children(5-15)</option>
+                        <option value="">6 children(5-15)</option>
+                        <option value="">7 children(5-15)</option>
+                        <option value="">8 children(5-15)</option>
+                        <option value="">9 children(5-15)</option>
+                    </select>
+                    <button type="submit">Find tickets</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="irctc">
+            <h3>
+                IRCTC Top Train Routes
+            </h3>
+            <div class="container">
+                <img src="images/toytrain.jpg" alt="" width="400px">
+                <div class="info">
+                    <h3>Himalayan Queen (Kalka to Shimla )</h3>
+                    <p>For those of you who enjoy movies and feeling ‘filmy’ when you travel, this rail journey by the
+                        “toy train” is a must. The trains that run on this route resemble toy trains that awaken the
+                        inner child in you. 96 km long, this route was started way back in 1903 and it passes through
+                        102 tunnels and 82 bridges and has been awarded a world record by the Guinness book of world
+                        records for the steepest rise in altitude in the span of 96 km. For 5 hours that you will travel
+                        on this pretty little train, you will pass through scenic beauty that will amaze you.</p>
+                </div>
+            </div>
+            <div class="container">
+                <img src="images/Darjeeling Himalayan.jpg" alt="" width="400px">
+                <div class="info">
+                    <h3>Darjeeling Himalayan Railway (Jalpaiguri to Darjeeling )</h3>
+                    <p>Another impressive toy train journey is the one that runs from Jalpaiguri to Darjeeling.
+                        Breathtaking, quite literally when the route takes you on a series of landscapes, altitudes and
+                        climate changes; Jalpaiguri being a plain and Darjeeling, the hill station that serves the best
+                        tea in all of India. Prepare yourself for a trip hooded by the Himalayas, through tea gardens
+                        and forests and if you’re lucky and the skies are clear, you can spot the magnificent
+                        Kanchenjunga.</p>
+                </div>
+            </div>
+            <div class="container">
+                <img src="images/mumbai-goa.jpg" alt="" width="400px">
+                <div class="info">
+                    <h3>Mumbai to Goa</h3>
+                    <p>The train that connects you to both these special places is one that gives an equally stunning
+                        experience running between the Sahyadri hills on one side and the Arabian sea on the other.
+                        Cruising through 92 tunnels and on 2000 bridges, this route gives you postcard-worthy moments
+                        every five seconds with endless stretches of water, paddy hues and villages under shades of
+                        coconut trees.</p>
+                </div>
+            </div>
+            <div class="container">
+                <img src="images/kanyakumari.jpg" alt="" width="400px">
+                <div class="info">
+                    <h3>Kanyakumari –Trivandrum</h3>
+                    <p>A short train journey, but one packed with delicious sensory ticklers, this journey takes you
+                        through coconut trees, and gliding past typical Tamil and Keralite architecture. Gopurams and
+                        ornately decorated temples cross over to welcome typical Keralite churches and a totally
+                        different style of architecture. This train ride is indeed through South India’s most
+                        picturesque locations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="irctc">
+            <h3>Top trains Available:</h3>
+            <div class="container2">
+                <img src="https://blog.travelkhana.com/tkblog/wp-content/uploads/sites/2/2016/11/maharaja-1024x357.jpg"
+                    alt="train" width="300px" height="200px">
+                <h3>The Maharajas' Express : Luxury Train Journey in India</h3>
+                <p>Indian Maharajas Train is a luxury train in India introduced by Indian Railways catering and Tourism
+                    Corporation (IRCTC). A traveler gets an amazing opportunity to Experience royalty but running on wheels.
+                    Indian Luxury Train has four cabins Deluxe Cabin, Presidential Suite, Suite and Junior Suite. It also has
+                    Lounge Bar and Restaurants. All cabins are designed so beautifully that if one sees through the window, one
+                    can enjoy beautiful landscapes. Indian Luxury Train has allover red carpet and interiors are designed
+                    keeping in mind the Indian Royal Heritage</p>
+                    <button>Book It</button>
+            </div>
+            <hr>
+            <div class="container3">
+                <img src="https://i0.wp.com/www.rajasthandirect.com/wp-content/uploads/2013/05/Royal-Rajasthan-on-Wheels.jpg?fit=450%2C317&ssl=1"
+                    alt="train" width="300px" height="200px">
+                <h3>ROYAL RAJASTHAN</h3>
+                <p>A sophisticated luxury train that started in 2009, Royal Rajasthan on Wheels is truly extraordinary. This
+                    train takes a similar route as Palace on Wheels and offers a 7 days/8 nights’ package through the beautiful
+                    Rajasthan.</p>
+                    <button>Book It</button>
+            </div>
+            <hr>
+            <div class="container2">
+                <img src="https://www.irctchelp.in/wp-content/uploads/2020/04/Palace-on-Wheels-1200x1201.jpg"
+                    alt="train" width="300px" height="200px">
+                <h3>PALACE ON WHEELS</h3>
+                <p>Palace on Wheels- the pride of royal Rajasthan, truly depicts the impressive glory of the state. The train
+                    started in 1982 and was based on the royal coaches of the British Era.</p>
+                    <button>Book It</button>
+            </div>
+            
+            <hr>
+            <div class="container3">
+                <img src="https://www.deccan-odyssey-india.com/images/train.jpg"
+                    alt="train" width="300px" height="200px">
+                <h3>DECCAN ODYSSEY</h3>
+                <p>Launched to boost tourism in Maharashtra, the Deccan Odyssey starts from Mumbai and covers 10 popular tourist
+                    attractions like Goa, Ratnagiri, Aurangabad, Ajanta-Ellora, etc.
+        
+                    So, take a ride in these trains and experience India like never before.</p>
+                    <button>Book It</button>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+		<div class="copy">
+			Copyright &copy; BookMyTrip all rights reserved<br>
+			<br>Email:bookmytrip@gmail.com
+		</div>
+	</footer>
+</body>
+</html>
